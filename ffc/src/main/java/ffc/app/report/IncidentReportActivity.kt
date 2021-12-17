@@ -3,11 +3,12 @@ package ffc.app.report
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+//import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.TextInputEditText
+//import android.support.design.widget.TextInputEditText
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.OnMapReadyCallback
 import ffc.android.onClick
 import ffc.app.MapActivity

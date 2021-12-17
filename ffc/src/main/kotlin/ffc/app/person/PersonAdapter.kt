@@ -18,12 +18,13 @@
 package ffc.app.person
 import android.app.Activity
 import android.net.Uri
-import android.support.v7.widget.RecyclerView
+//import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.recyclerview.widget.RecyclerView
 import ffc.android.getString
 import ffc.android.layoutInflater
 import ffc.android.load
@@ -94,7 +95,7 @@ class PersonAdapter(
                     val pair = it.value.issue.toIconTitlePair() ?: return@forEach
                     itemView.personStatus.addView(ImageView(itemView.context).apply {
                         setImageResource(pair.first)
-                        contentDescription = getString(pair.second)
+                        contentDescription = context.getString(pair.second)
                     }, layoutParam)
                 }
                 avatarUrl?.let { itemView.personImageView.load(Uri.parse(it)) }

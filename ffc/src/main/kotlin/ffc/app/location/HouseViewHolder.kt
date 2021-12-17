@@ -1,7 +1,8 @@
 package ffc.app.location
 
-import android.support.v7.widget.RecyclerView
+//import android.support.v7.widget.RecyclerView
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 import ffc.entity.place.House
 import kotlinx.android.synthetic.main.item_house.view.houseNo
 

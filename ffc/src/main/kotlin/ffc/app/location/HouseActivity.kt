@@ -18,17 +18,20 @@
 package ffc.app.location
 
 import android.app.Activity
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+//import android.arch.lifecycle.MutableLiveData
+//import android.arch.lifecycle.ViewModel
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+//import android.support.v7.widget.LinearLayoutManager
 import android.transition.Slide
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.recyclerview.widget.LinearLayoutManager
 import ffc.android.allowTransitionOverlap
 import ffc.android.enter
 import ffc.android.excludeSystemView
@@ -162,7 +165,7 @@ class HouseActivity : FamilyFolderActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
             R.id.photoMenu -> startTakePhotoActivity(PhotoType.PLACE, viewModel.house.value?.imagesUrl)
             R.id.locationMenu -> startActivity<MarkLocationActivity>("house" to viewModel.house.value?.toJson())

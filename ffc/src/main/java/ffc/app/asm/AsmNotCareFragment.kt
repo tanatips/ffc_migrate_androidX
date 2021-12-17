@@ -1,13 +1,14 @@
 package ffc.app.asm
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
+//import android.support.v4.app.Fragment
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.fragment.app.Fragment
 import ffc.android.observe
 import ffc.android.sceneTransition
 import ffc.android.viewModel
@@ -86,7 +87,7 @@ class AsmNotCareFragment : Fragment() {
             var lblhouseId = view.findViewById<TextView>(R.id.lblhomeId);
             var houseId = lblhouseId.text
             val intent = intentFor<HouseActivity>("houseId" to houseId)
-            startActivityForResult(intent, REQ_ADD_LOCATION, activity!!.sceneTransition())
+            startActivityForResult(intent, REQ_ADD_LOCATION, requireActivity().sceneTransition())
         })
         loadGeoJson();
         observeViewModel();
@@ -94,7 +95,7 @@ class AsmNotCareFragment : Fragment() {
     }
 
     private fun loadGeoJson() {
-        placeGeoJson(auth(context!!).org!!).noLocation {
+        placeGeoJson(auth(requireContext()).org!!).noLocation {
             onFound {
                 viewModel.lstHome.value = it;
             }

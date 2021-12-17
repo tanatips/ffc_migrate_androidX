@@ -45,7 +45,7 @@ interface PlaceService {
     @PUT("org/{orgId}/house/{houseId}")
     fun updateHouse(
         @Path("orgId") orgId: String,
-        @Body place: Place,
-        @Path("houseId") houseId: String = place.id
+        @Body house: House,
+        @Path("houseId") houseId: String = house.id
     ): Call<House>
 }

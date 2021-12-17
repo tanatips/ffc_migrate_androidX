@@ -77,6 +77,7 @@ class AvatarPhotoActivity : FamilyFolderActivity() {
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         handlePermissionsResult(requestCode, permissions, grantResults)
     }
 
@@ -85,7 +86,7 @@ class AvatarPhotoActivity : FamilyFolderActivity() {
         photoTaker.onActivityResult(requestCode, resultCode, data)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
             android.R.id.home -> {
                 if (photoUri == null) finish()

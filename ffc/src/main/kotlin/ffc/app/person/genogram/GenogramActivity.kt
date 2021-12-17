@@ -2,8 +2,8 @@ package ffc.app.person.genogram
 
 import android.animation.ObjectAnimator
 import android.app.AlertDialog
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+//import android.arch.lifecycle.MutableLiveData
+//import android.arch.lifecycle.ViewModel
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
@@ -20,6 +20,8 @@ import android.view.View
 import android.view.WindowManager
 import android.webkit.*
 import android.widget.*
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import ffc.android.onClick
 import ffc.app.FamilyFolderActivity
 import ffc.app.R

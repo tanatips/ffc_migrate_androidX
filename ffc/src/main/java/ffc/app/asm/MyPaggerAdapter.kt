@@ -1,8 +1,11 @@
 package ffc.app.asm
 
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
+//import android.support.v4.app.Fragment
+//import android.support.v4.app.FragmentManager
+//import android.support.v4.app.FragmentPagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import ffc.android.observe
 
 class MyPagerAdapter (fm: FragmentManager): FragmentPagerAdapter(fm) {

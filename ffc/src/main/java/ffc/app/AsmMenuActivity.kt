@@ -1,12 +1,14 @@
 package ffc.app
 
-import android.support.v7.app.AppCompatActivity
+//import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
+//import android.support.v7.app.AlertDialog
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toolbar
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import ffc.android.onClick
 
 import kotlinx.android.synthetic.main.activity_asm_menu.*

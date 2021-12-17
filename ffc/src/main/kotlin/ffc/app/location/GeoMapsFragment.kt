@@ -18,13 +18,19 @@
 package ffc.app.location
 
 import android.app.Activity
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+//import android.arch.lifecycle.MutableLiveData
+//import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.annotation.DrawableRes
-import android.support.design.widget.FloatingActionButton
+//import android.support.annotation.DrawableRes
+//import android.support.design.widget.FloatingActionButton
+
+import androidx.annotation.DrawableRes
+
+
 import android.util.Log
 import android.view.Gravity
 import android.view.View
@@ -33,6 +39,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.maps.android.data.geojson.GeoJsonLayer
 import com.google.maps.android.data.geojson.GeoJsonPointStyle
 import com.sembozdemir.permissionskt.handlePermissionsResult
@@ -60,7 +67,7 @@ class GeoMapsFragment : PointMarloFragment() {
     private var addLocationButton: FloatingActionButton? = null
     private var btnFilter: FloatingActionButton? = null
     private val viewModel by lazy { viewModel<GeoViewModel>() }
-    private val preference by lazy { GeoPreferences(context!!, org) }
+    private val preference by lazy { GeoPreferences(requireContext(), org) }
     var window = PopupWindow()
     var isShow = false;
     var disease0 = true;
@@ -76,8 +83,8 @@ class GeoMapsFragment : PointMarloFragment() {
     override fun onActivityCreated(bundle: Bundle?) {
         super.onActivityCreated(bundle)
         setStartLocation(preference.lastCameraPosition)
-        addLocationButton = activity!!.find(R.id.addLocationButton)
-        btnFilter = activity!!.find(R.id.btnFilter)
+        addLocationButton = requireActivity().find(R.id.addLocationButton)
+        btnFilter = requireActivity().find(R.id.btnFilter)
         viewFinder.gone()
         hideToolsMenu()
         observeViewModel()

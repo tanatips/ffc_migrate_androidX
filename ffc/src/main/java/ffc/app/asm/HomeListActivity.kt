@@ -1,7 +1,8 @@
 package ffc.app.asm
 
-import android.support.v7.app.AppCompatActivity
+//import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import ffc.android.onClick
 import ffc.app.R
 import kotlinx.android.synthetic.main.activity_home_list.*

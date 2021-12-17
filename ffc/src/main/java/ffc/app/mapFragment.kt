@@ -11,14 +11,17 @@ import android.location.Location
 import android.location.LocationManager
 import android.os.Build
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat
-import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
+//import android.support.v4.app.ActivityCompat
+//import android.support.v4.app.Fragment
+//import android.support.v4.content.ContextCompat
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.google.android.gms.location.LocationListener
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -50,7 +53,17 @@ class mapFragment : Fragment(),  OnMapReadyCallback, LocationListener {
         geocoder = Geocoder(context, Locale("th", "TH"))
         (childFragmentManager.findFragmentById(R.id.mapFragment) as SupportMapFragment?)!!.getMapAsync { googleMap ->
             mMap = googleMap
-            mMap!!.isMyLocationEnabled = true
+//            mMap!!.isMyLocationEnabled = true
+            if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (ContextCompat.checkSelfPermission(requireContext(),
+                        Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    //buildGoogleApiClient()
+                    mMap!!.isMyLocationEnabled = true
+                }
+            } else {
+                //buildGoogleApiClient()
+                mMap!!.isMyLocationEnabled = true
+            }
             mMap!!.setOnCameraIdleListener {
                 val cameraPosition: CameraPosition = mMap!!.getCameraPosition()
                 if (cameraPosition != null) {
@@ -81,16 +94,16 @@ class mapFragment : Fragment(),  OnMapReadyCallback, LocationListener {
         resultIntent.putExtra("lat", resultLatLng!!.latitude)
         resultIntent.putExtra("lon", resultLatLng!!.longitude)
         resultIntent.putExtra("location", locationString)
-        activity!!.setResult(Activity.RESULT_OK, resultIntent)
-        activity!!.finish()
+        requireActivity().setResult(Activity.RESULT_OK, resultIntent)
+        requireActivity().finish()
     }
     private fun getLocation() {
         if (ActivityCompat.checkSelfPermission(
-                context!!, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                context!!, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(Activity(), arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), REQUEST_LOCATION)
         } else {
-            locationManager = this.activity!!.getSystemService(LOCATION_SERVICE) as LocationManager?
+            locationManager = this.requireActivity().getSystemService(LOCATION_SERVICE) as LocationManager?
             val locationGPS = locationManager!!.getLastKnownLocation(LocationManager.GPS_PROVIDER)
             if (locationGPS != null) {
                 val lat = locationGPS.latitude
@@ -118,7 +131,7 @@ class mapFragment : Fragment(),  OnMapReadyCallback, LocationListener {
     override fun onMapReady(p0: GoogleMap?) {
 
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ContextCompat.checkSelfPermission(context!!,
+            if (ContextCompat.checkSelfPermission(requireContext(),
                     Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 //buildGoogleApiClient()
                 mMap!!.isMyLocationEnabled = true

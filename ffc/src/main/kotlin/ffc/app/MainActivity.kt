@@ -17,16 +17,16 @@
 
 package ffc.app
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+//import android.arch.lifecycle.MutableLiveData
+//import android.arch.lifecycle.ViewModel
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.support.design.widget.NavigationView
-import android.support.v4.view.GravityCompat
-import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AlertDialog
+//import android.support.design.widget.NavigationView
+//import android.support.v4.view.GravityCompat
+//import android.support.v7.app.ActionBarDrawerToggle
+//import android.support.v7.app.AlertDialog
 import android.transition.Fade
 import android.view.MenuItem
 import android.view.View
@@ -34,7 +34,13 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
+import androidx.core.view.GravityCompat
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.berry_med.monitordemo.activity.DeviceMainActivity
+import com.google.android.material.navigation.NavigationView
 import ffc.android.enter
 import ffc.android.load
 import ffc.android.observe

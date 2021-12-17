@@ -2,7 +2,7 @@ package ffc.app.asm
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
+//import android.support.v4.app.Fragment
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -14,6 +14,7 @@ import android.widget.EditText
 import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import ffc.android.observe
 import ffc.android.sceneTransition
 import ffc.android.viewModel
@@ -99,14 +100,14 @@ class AsmCareFragment : Fragment() {
         lvHomeList!!.setOnItemClickListener(OnItemClickListener { adapterView, view, pos, l ->
              var houseId=view.findViewById<TextView>(R.id.lblhomeId);
              val intent = intentFor<HouseActivity>("houseId" to houseId.text.toString())
-             startActivityForResult(intent, REQ_ADD_LOCATION, activity!!.sceneTransition())
+             startActivityForResult(intent, REQ_ADD_LOCATION, requireActivity().sceneTransition())
         })
         loadGeoJson();
         observeViewModel();
         return view
     }
     private fun loadGeoJson() {
-        placeGeoJson(auth(context!!).org!!).all {
+        placeGeoJson(auth(requireContext()).org!!).all {
             onFound {
                 viewModel.geojson.value = it;
             }

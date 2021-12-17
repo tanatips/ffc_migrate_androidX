@@ -21,10 +21,11 @@ import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.content.Intent.getIntent
 import android.os.Bundle
-import android.support.v4.app.Fragment
+//import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.berry_med.monitordemo.activity.DeviceMainActivity
 import ffc.android.check
 import ffc.android.isNotBlank
@@ -74,6 +75,14 @@ internal class VitalSignFormFragment : Fragment(), HealthCareServivceForm<Health
             var intent = Intent(context,DeviceMainActivity::class.java)
             startActivityForResult(intent,1)
         }
+        btnPressure.onClick{
+            var intent = Intent(context,samplecode_north_vision_lifecare_10.LifeCareActivity::class.java)
+            startActivityForResult(intent,2)
+        }
+        btnTemperator.onClick{
+            var intent = Intent(context,samplecode_north_vision_thermometer.Activity.ThermometerActivity::class.java)
+            startActivityForResult(intent,3)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -86,39 +95,58 @@ internal class VitalSignFormFragment : Fragment(), HealthCareServivceForm<Health
                 var tempInfo = data!!.getStringExtra("TEMPInfo");
                 var nibpInfo = data!!.getStringExtra("NIBPInfo");
 
-                var ecgTemp = ecgInfo.split(":");
-                var heartRate = ecgTemp[1].replace("Resp Rate","");
-                var RespRate = ecgTemp[2];
+                var ecgTemp = ecgInfo?.split(":");
+                var heartRate = ecgTemp?.get(1)?.replace("Resp Rate","");
+                var RespRate = ecgTemp?.get(2);
 
-                var spO2Temp = spO2Info.split(":")
-                var spO2 = spO2Temp[1].replace("SPO2","")
-                var spO2PluseRate = spO2Temp[2]
+                var spO2Temp = spO2Info?.split(":")
+                var spO2 = spO2Temp?.get(1)?.replace("SPO2","")
+                var spO2PluseRate = spO2Temp?.get(2)
 
                 var strHigh = "High:";
                 var strLow ="Low:"
                 var strMean ="Mean:"
-                var indexHigh = nibpInfo.indexOf(strHigh);
-                var indexLow = nibpInfo.indexOf(strLow);
-                var indexMean =  nibpInfo.indexOf(strMean);
-                var hight= nibpInfo.substring(indexHigh+strHigh.length,indexLow-1);
-                var low= nibpInfo.substring(indexLow+strLow.length,indexMean-1);
-                var tmp = tempInfo.replace("TEMP:","").replace("°C","").trim();
+                var indexHigh = nibpInfo?.indexOf(strHigh);
+                var indexLow = nibpInfo?.indexOf(strLow);
+                var indexMean = nibpInfo?.indexOf(strMean);
+                var hight= indexHigh?.plus(strHigh.length)?.let { indexLow?.minus(1)?.let { it1 ->
+                    nibpInfo?.substring(it,
+                        it1
+                    )
+                } };
+                var low= indexLow?.plus(strLow.length)?.let { indexMean?.minus(1)?.let { it1 ->
+                    nibpInfo?.substring(it,
+                        it1
+                    )
+                } };
+                var tmp = tempInfo?.replace("TEMP:","")!!.replace("°C","").trim();
                 if(tmp.trim().indexOf("-")<0) {
                     tempField.setText(tmp);
                 }
-                if(hight.indexOf("-")<0) {
+                if(hight!!.indexOf("-")<0) {
                     bpSysField.setText(hight)
                 }
-                if(low.indexOf("-")<0) {
+                if(low!!.indexOf("-")<0) {
                     bpDiaField.setText(low)
                 }
-                if(spO2PluseRate.indexOf("-")<0) {
+                if(spO2PluseRate!!.indexOf("-")<0) {
 
                     pulseField.setText(spO2PluseRate)
                 }
-                if(RespRate.indexOf("-")<0) {
+                if(RespRate!!.indexOf("-")<0) {
                     rrField.setText(RespRate)
                 }
+            }
+            else if(requestCode==2){
+                var sysInfo = data!!.getStringExtra("SYSInfo");
+                bpSysField.setText(sysInfo)
+
+                var diaInfo = data!!.getStringExtra("DIAInfo");
+                bpDiaField.setText(sysInfo)
+            }
+            else if(requestCode==3){
+                var tempInfo = data!!.getStringExtra("TEMPInfo");
+                tempField.setText(tempInfo);
             }
         }
     }
