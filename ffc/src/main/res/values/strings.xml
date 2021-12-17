@@ -57,7 +57,7 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="device_efdv470">เครื่องมือวัด (BerryMad)</string>
+    <string name="device_efdv470">เครื่องมือวัด (Berry Med)</string>
     <string name="device_pressure">วัดความดัน</string>
     <string name="device_temperator">วัดอุณหภูมิ</string>
     <string name="action_settings">ตั้งค่า</string>
