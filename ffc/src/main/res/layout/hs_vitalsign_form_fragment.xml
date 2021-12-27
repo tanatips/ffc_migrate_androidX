@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:hint="อุณหภูมิร่างกาย"
             android:inputType="number|numberDecimal"
-            android:maxLength="2" />
+            android:maxLength="5" />
 
     </com.google.android.material.textfield.TextInputLayout>
     <Button
