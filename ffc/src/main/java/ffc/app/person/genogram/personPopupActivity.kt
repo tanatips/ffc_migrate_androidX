@@ -32,14 +32,27 @@ import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.components.LimitLine
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.components.YAxis
-import com.github.mikephil.charting.data.*
+
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineDataSet
+import com.github.mikephil.charting.data.BarData
+import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.data.BarDataSet
+
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 import de.hdodenhof.circleimageview.CircleImageView
-import ffc.android.*
+import ffc.android.onClick
+import ffc.android.observe
+import ffc.android.viewModel
+import ffc.android.load
+import ffc.android.drawable
+import ffc.android.drawableStart
+
 import ffc.app.FamilyFolderActivity
 import ffc.app.R
 import ffc.app.health.service.healthCareServicesOf
@@ -53,11 +66,17 @@ import ffc.entity.healthcare.Frequency
 import ffc.entity.healthcare.HealthCareService
 import ffc.entity.update
 import ffc.genogram.getResourceAs
-import kotlinx.android.synthetic.main.activity_person_popup.*
+import kotlinx.android.synthetic.main.activity_person_popup.emptyViewPerson
+import kotlinx.android.synthetic.main.activity_person_popup.homeAsUp
+import kotlinx.android.synthetic.main.activity_person_popup.linear_layout
+import kotlinx.android.synthetic.main.activity_person_popup.avatarView
+
 import org.joda.time.DateTime
 import java.io.ByteArrayOutputStream
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.UUID
+
 import kotlin.collections.ArrayList
 
 

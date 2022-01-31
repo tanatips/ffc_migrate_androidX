@@ -45,15 +45,15 @@ import java.util.concurrent.TimeUnit.SECONDS
 //private var url_production = "https://infinite-sea-82636.herokuapp.com/v1/"
 //private var url_debug = "https://infinite-sea-82636.herokuapp.com/v1/"
 
-//private var url_staging = "https://api.ffc.in.th/v1/"
-//private var url_beta = "https://api.ffc.in.th/v1/"
-//private var url_production = "https://api.ffc.in.th/v1/"
-//private var url_debug = "https://api.ffc.in.th/v1/"
+private var url_staging = "https://api.ffc.in.th/v1/"
+private var url_beta = "https://api.ffc.in.th/v1/"
+private var url_production = "https://api.ffc.in.th/v1/"
+private var url_debug = "https://api.ffc.in.th/v1/"
 
-private var url_staging = "https://api-fixbug.ffc.in.th/v1/"
-private var url_beta = "https://api-fixbug.ffc.in.th/v1/"
-private var url_production = "https://api-fixbug.ffc.in.th/v1/"
-private var url_debug = "https://api-fixbug.ffc.in.th/v1/"
+//private var url_staging = "https://api-fixbug.ffc.in.th/v1/"
+//private var url_beta = "https://api-fixbug.ffc.in.th/v1/"
+//private var url_production = "https://api-fixbug.ffc.in.th/v1/"
+//private var url_debug = "https://api-fixbug.ffc.in.th/v1/"
 // https://api-fixbug.ffc.in.th/v1
 //
 // private var url_staging = "https://api-test.ffc.in.th/v1/"

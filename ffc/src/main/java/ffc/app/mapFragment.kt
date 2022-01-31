@@ -30,9 +30,12 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import ffc.android.onClick
-import kotlinx.android.synthetic.main.fragment_map.*
+
+import kotlinx.android.synthetic.main.fragment_map.shareLayout
+import kotlinx.android.synthetic.main.fragment_map.locationTextView
 import java.io.IOException
-import java.util.*
+
+import java.util.Locale
 
 
 class mapFragment : Fragment(),  OnMapReadyCallback, LocationListener {

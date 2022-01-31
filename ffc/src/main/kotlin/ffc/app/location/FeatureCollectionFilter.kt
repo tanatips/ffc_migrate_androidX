@@ -2,7 +2,13 @@ package ffc.app.location
 
 import me.piruin.geok.BBox
 import me.piruin.geok.LatLng
-import me.piruin.geok.geometry.*
+import me.piruin.geok.geometry.Feature
+import me.piruin.geok.geometry.Point
+import me.piruin.geok.geometry.LineString
+import me.piruin.geok.geometry.MultiPoint
+import me.piruin.geok.geometry.Polygon
+import me.piruin.geok.geometry.MultiLineString
+import me.piruin.geok.geometry.MultiPolygon
 
 data class FeatureCollectionFilter <T>(var features: List<Feature<T>>) {
 

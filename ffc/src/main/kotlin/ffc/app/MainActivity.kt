@@ -59,15 +59,19 @@ import ffc.app.search.SearchActivity
 import ffc.app.setting.AboutActivity
 import ffc.app.setting.SettingsActivity
 import ffc.entity.User
-import kotlinx.android.synthetic.main.activity_asm_menu.*
-import kotlinx.android.synthetic.main.activity_asm_menu.view.*
-import kotlinx.android.synthetic.main.activity_asm_menu.view.tvAsmName
+import kotlinx.android.synthetic.main.activity_asm_menu.tvAsmName
+import kotlinx.android.synthetic.main.activity_asm_menu.view.avatarView
+import kotlinx.android.synthetic.main.activity_asm_menu.view.homeAsUp
+import kotlinx.android.synthetic.main.activity_asm_menu.view.btnLocation
+import kotlinx.android.synthetic.main.activity_asm_menu.view.btnReport
 
 import kotlinx.android.synthetic.main.activity_main.drawerLayout
 import kotlinx.android.synthetic.main.activity_main.navView
-import kotlinx.android.synthetic.main.activity_main_content.*
+import kotlinx.android.synthetic.main.activity_main_content.btnBack
 import kotlinx.android.synthetic.main.activity_main_content.toolbar
-import kotlinx.android.synthetic.main.activity_main_content.view.*
+import kotlinx.android.synthetic.main.activity_main_content.searchButton
+import kotlinx.android.synthetic.main.activity_main_content.versionView
+import kotlinx.android.synthetic.main.activity_main_content.addLocationButton
 import org.jetbrains.anko.browse
 import org.jetbrains.anko.dimen
 import org.jetbrains.anko.find

@@ -37,7 +37,17 @@ import ffc.app.util.setInto
 import ffc.entity.healthcare.BloodPressure
 import ffc.entity.healthcare.HealthCareService
 import ffc.entity.update
-import kotlinx.android.synthetic.main.hs_vitalsign_form_fragment.*
+
+import kotlinx.android.synthetic.main.hs_vitalsign_form_fragment.bpSysField
+import kotlinx.android.synthetic.main.hs_vitalsign_form_fragment.bpDiaField
+import kotlinx.android.synthetic.main.hs_vitalsign_form_fragment.pulseField
+import kotlinx.android.synthetic.main.hs_vitalsign_form_fragment.rrField
+import kotlinx.android.synthetic.main.hs_vitalsign_form_fragment.tempField
+import kotlinx.android.synthetic.main.hs_vitalsign_form_fragment.btnMeasuringTools
+import kotlinx.android.synthetic.main.hs_vitalsign_form_fragment.btnPressure
+import kotlinx.android.synthetic.main.hs_vitalsign_form_fragment.btnTemperator
+
+
 import org.jetbrains.anko.support.v4.startActivity
 
 internal class VitalSignFormFragment : Fragment(), HealthCareServivceForm<HealthCareService> {

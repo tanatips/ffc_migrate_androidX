@@ -18,8 +18,16 @@ import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
-import android.webkit.*
-import android.widget.*
+import android.webkit.JavascriptInterface
+import android.webkit.WebView
+import android.webkit.WebChromeClient
+import android.webkit.WebViewClient
+
+import android.widget.ImageButton
+import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.TableRow
+
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import ffc.android.onClick
@@ -32,12 +40,10 @@ import ffc.entity.Organization
 import ffc.entity.User
 import ffc.entity.gson.toJson
 import ffc.entity.healthcare.HealthCareService
-import kotlinx.android.synthetic.main.activity_genogram.*
+import kotlinx.android.synthetic.main.activity_genogram.root_layout
 import kotlinx.android.synthetic.main.activity_genogram.emptyViewPerson
 import org.jetbrains.anko.runOnUiThread
 import org.json.JSONArray
-import org.json.JSONObject
-import java.util.*
 
 class GenogramActivity : FamilyFolderActivity() {
 

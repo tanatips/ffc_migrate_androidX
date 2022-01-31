@@ -42,7 +42,7 @@ import ffc.app.dev
 import ffc.entity.Organization
 import ffc.entity.gson.parseTo
 import ffc.entity.gson.toJson
-import kotlinx.android.synthetic.main.hs_service_item.view.*
+
 import kotlinx.android.synthetic.main.login_user_fragment.btnBack
 import kotlinx.android.synthetic.main.login_user_fragment.btnLogin
 import kotlinx.android.synthetic.main.login_user_fragment.emptyView

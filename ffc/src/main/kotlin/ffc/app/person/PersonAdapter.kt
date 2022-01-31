@@ -35,7 +35,12 @@ import ffc.app.health.analyze.toIconTitlePair
 import ffc.app.util.AdapterClickListener
 import ffc.entity.Person
 import ffc.entity.User
-import kotlinx.android.synthetic.main.person_list_item.view.*
+import kotlinx.android.synthetic.main.person_list_item.view.personNameView
+import kotlinx.android.synthetic.main.person_list_item.view.personDeadLabel
+import kotlinx.android.synthetic.main.person_list_item.view.personAgeView
+import kotlinx.android.synthetic.main.person_list_item.view.personImageView
+import kotlinx.android.synthetic.main.person_list_item.view.personStatus
+
 import org.jetbrains.anko.dip
 import timber.log.Timber
 

@@ -7,7 +7,12 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.EditText
+import android.widget.ListView
+import android.widget.TextView
+import android.widget.Toast
+import android.widget.AdapterView
+
 import androidx.fragment.app.Fragment
 import ffc.android.observe
 import ffc.android.sceneTransition
@@ -20,7 +25,7 @@ import ffc.app.location.HouseActivity
 import ffc.app.location.placeGeoJson
 import ffc.entity.place.House
 import org.jetbrains.anko.support.v4.intentFor
-import java.util.*
+
 import kotlin.collections.ArrayList
 
 /**

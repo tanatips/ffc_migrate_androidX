@@ -36,7 +36,7 @@ import ffc.android.onClick
 import ffc.android.viewModel
 import ffc.android.visible
 import ffc.app.R
-import kotlinx.android.synthetic.main.hs_service_item.view.*
+
 import kotlinx.android.synthetic.main.login_otp_fragment.authenBtn
 import kotlinx.android.synthetic.main.login_otp_fragment.btnBack
 import kotlinx.android.synthetic.main.login_otp_fragment.emptyView

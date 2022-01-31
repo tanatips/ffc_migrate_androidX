@@ -10,8 +10,8 @@ import android.widget.Toolbar
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import ffc.android.onClick
+//
 
-import kotlinx.android.synthetic.main.activity_asm_menu.*
 
 class AsmMenuActivity : AppCompatActivity() {
 

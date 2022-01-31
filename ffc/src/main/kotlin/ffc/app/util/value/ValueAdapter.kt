@@ -4,8 +4,7 @@ package ffc.app.util.value
 //import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.*
+import androidx.recyclerview.widget.RecyclerView.Adapter
 import ffc.android.inflate
 import ffc.app.R
 import ffc.app.util.AdapterClickListener

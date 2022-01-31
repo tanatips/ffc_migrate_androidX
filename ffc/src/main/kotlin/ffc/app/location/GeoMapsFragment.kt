@@ -34,7 +34,13 @@ import androidx.annotation.DrawableRes
 import android.util.Log
 import android.view.Gravity
 import android.view.View
-import android.widget.*
+
+import android.widget.PopupWindow
+import android.widget.Switch
+import android.widget.CompoundButton
+//import android.view
+//import android.widget./
+
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.CameraPosition
@@ -43,7 +49,16 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.maps.android.data.geojson.GeoJsonLayer
 import com.google.maps.android.data.geojson.GeoJsonPointStyle
 import com.sembozdemir.permissionskt.handlePermissionsResult
-import ffc.android.*
+
+import ffc.android.onClick
+import ffc.android.observe
+import ffc.android.viewModel
+import ffc.android.gone
+import ffc.android.sceneTransition
+import ffc.android.rawAs
+import ffc.android.drawable
+import ffc.android.toBitmap
+
 import ffc.app.R
 import ffc.app.auth.auth
 import ffc.app.dev
@@ -450,10 +465,10 @@ class GeoMapsFragment : PointMarloFragment() {
                 }
             }
             setOnFeatureClickListener { feature ->
-                val user = auth(context!!).user!!
+                val user = auth(requireContext()).user!!
                 if(feature!=null) {
                     val intent = intentFor<HouseActivity>("houseId" to feature.getProperty("id"))
-                    startActivityForResult(intent, REQ_ADD_LOCATION, activity!!.sceneTransition())
+                    startActivityForResult(intent, REQ_ADD_LOCATION, requireActivity().sceneTransition())
                 }
             }
             addLayerToMap()
@@ -470,7 +485,7 @@ class GeoMapsFragment : PointMarloFragment() {
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        activity!!.handlePermissionsResult(requestCode, permissions, grantResults)
+        requireActivity().handlePermissionsResult(requestCode, permissions, grantResults)
     }
 
     override fun onPause() {
@@ -478,7 +493,7 @@ class GeoMapsFragment : PointMarloFragment() {
         googleMap?.cameraPosition?.let { preference.lastCameraPosition = it }
     }
 
-    fun bitmapOf(@DrawableRes resId: Int) = BitmapDescriptorFactory.fromBitmap(context!!.drawable(resId).toBitmap())
+    fun bitmapOf(@DrawableRes resId: Int) = BitmapDescriptorFactory.fromBitmap(requireContext().drawable(resId).toBitmap())
 
     private val homeIcon by lazy { bitmapOf(R.drawable.ic_marker_home_green_24dp) }
 

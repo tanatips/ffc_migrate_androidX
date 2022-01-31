@@ -11,8 +11,7 @@ import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.*
+import androidx.core.content.ContextCompat.getColor
 import androidx.recyclerview.widget.RecyclerView
 import ffc.android.gone
 import ffc.app.R

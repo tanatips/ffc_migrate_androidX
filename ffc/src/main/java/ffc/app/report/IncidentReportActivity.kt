@@ -7,14 +7,19 @@ import android.content.Intent
 import android.os.Bundle
 //import android.support.design.widget.TextInputEditText
 import android.view.inputmethod.InputMethodManager
-import android.widget.*
+import android.widget.ArrayAdapter
+import android.widget.ImageButton
+import android.widget.Spinner
+import android.widget.TextView
+
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.OnMapReadyCallback
 import ffc.android.onClick
 import ffc.app.MapActivity
 import ffc.app.R
 import ffc.app.photo.AvatarPhotoActivity
-import kotlinx.android.synthetic.main.activity_incident_report.*
+import kotlinx.android.synthetic.main.activity_incident_report.tvLocation
+import kotlinx.android.synthetic.main.activity_incident_report.imgDelete
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivity
 

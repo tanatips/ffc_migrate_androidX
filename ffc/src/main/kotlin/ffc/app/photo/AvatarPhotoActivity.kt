@@ -23,15 +23,20 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.sembozdemir.permissionskt.askPermissions
 import com.sembozdemir.permissionskt.handlePermissionsResult
-import ffc.android.*
+import ffc.android.load
+import ffc.android.viewModel
+import ffc.android.onClick
+import ffc.android.sceneTransition
+
 import ffc.app.FamilyFolderActivity
 import ffc.app.R
 import ffc.app.dev
 import ffc.app.person.PersonActivitiy
 import ffc.app.util.alert.handle
 import ffc.app.util.alert.toast
-import kotlinx.android.synthetic.main.activity_person_popup.*
-import kotlinx.android.synthetic.main.photo_action_bar.*
+
+import kotlinx.android.synthetic.main.photo_action_bar.takePhoto
+import kotlinx.android.synthetic.main.photo_action_bar.choosePhoto
 import kotlinx.android.synthetic.main.photo_avatar_activity.avatarView
 import me.piruin.phototaker.PhotoSize
 import me.piruin.phototaker.PhotoTaker
@@ -42,7 +47,8 @@ import org.jetbrains.anko.intentFor
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.UUID
+import java.util.Date
 
 class AvatarPhotoActivity : FamilyFolderActivity() {
     private var CAMERA_REQUEST_CODE=2034;

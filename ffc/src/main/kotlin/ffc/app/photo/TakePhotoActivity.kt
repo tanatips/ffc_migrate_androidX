@@ -20,14 +20,15 @@ import ffc.app.FamilyFolderActivity
 import ffc.app.R
 import ffc.app.setting.AboutActivity
 import ffc.app.util.alert.handle
-import kotlinx.android.synthetic.main.photo_action_bar.*
-import kotlinx.android.synthetic.main.photo_take_activity.*
+import kotlinx.android.synthetic.main.photo_action_bar.takePhoto
+import kotlinx.android.synthetic.main.photo_action_bar.choosePhoto
+import kotlinx.android.synthetic.main.photo_take_activity.photos
 import org.jetbrains.anko.dip
 import org.jetbrains.anko.indeterminateProgressDialog
 import org.jetbrains.anko.intentFor
 
 
-//import org.jetbrains.anko.support.v4.intentFor
+import org.jetbrains.anko.support.v4.intentFor
 
 val REQUEST_TAKE_PHOTO = 2034
 val REQUEST_PICK_PHOTO = 2035

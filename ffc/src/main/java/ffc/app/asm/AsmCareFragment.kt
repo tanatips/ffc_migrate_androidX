@@ -26,7 +26,8 @@ import ffc.app.location.placeGeoJson
 import ffc.genogram.Family
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.support.v4.intentFor
-import java.util.*
+//import org.jetbrains.anko.intentFor
+
 import kotlin.collections.ArrayList
 
 
